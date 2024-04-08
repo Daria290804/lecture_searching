@@ -21,6 +21,16 @@ def read_data(file_name, field):
     return data.get(field)
 
 
+def linear_search(sequence, target):
+    positions = []
+    count = 0
+
+    for i, num in enumerate(sequence):
+        if num == target:
+            positions.append(i)
+            count += 1
+
+    return {'positions': positions, 'count': count}
 
 def main():
     #pass
@@ -28,5 +38,17 @@ def main():
     print(sequential_data)
 
 
+def main2():
+    # Definujeme testovací sekvenci a hledané číslo
+    sequence = [4, 7, 2, 8, 3, 4, 9, 4]
+    target_number = 4
+
+    # Volání funkce linear_search() a výpis výsledků
+    result = linear_search(sequence, target_number)
+    print("Positions:", result['positions'])
+    print("Count:", result['count'])
+
+
 if __name__ == '__main__':
     main()
+    main2()
